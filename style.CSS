@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mitr', sans-serif;
+    /* 💜 เปลี่ยนเป็นไล่เฉดสีม่วงพาสเทลนุ่มๆ */
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    color: #4a4a4a;
+    min-height: 100vh;
+    padding: 40px 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- ส่วนหัวเว็บ --- */
+.main-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main-header h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 4rem;
+    /* 💜 เปลี่ยนหัวข้อหลักเป็นสีม่วงเข้มโทนสว่าง */
+    color: #8e24aa;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 10px;
+    animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+.sub-title {
+    font-size: 1.1rem;
+    color: #7b1fa2; /* 💜 สีม่วงหม่นเข้าธีม */
+}
+
+/* --- ส่วนที่ 2: ตัวนับเวลา (Memory Timer) --- */
+.timer-section {
+    /* 💜 ปรับพื้นหลังกล่องให้ขาวใสอมม่วงนิดๆ */
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    /* 💜 ปรับเงาให้เป็นออร่าสีม่วงจางๆ */
+    box-shadow: 0 10px 30px rgba(142, 36, 170, 0.1);
+    margin-bottom: 60px;
+}
+
+.timer-section h2 {
+    font-size: 1.4rem;
+    color: #8e24aa; /* 💜 เปลี่ยนสีหัวข้อ */
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.timer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.timer-box {
+    background: white;
+    padding: 20px 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    min-width: 120px;
+    border: 1px solid #f3e5f5; /* 💜 ขอบกล่องสีม่วงอ่อนมาก */
+}
+
+.timer-box .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #9c27b0; /* 💜 ตัวเลขสีม่วงสดใส */
+    line-height: 1.2;
+}
+
+.timer-box .label {
+    font-size: 0.9rem;
+    color: #8e8e8e;
+}
+
+.timer-footer {
+    margin-top: 25px;
+    font-size: 1.1rem;
+    color: #7b1fa2;
+    font-style: italic;
+}
+
+/* --- ส่วนที่ 3: แกลเลอรีโพลารอยด์ (Our Moments Gallery) --- */
+.gallery-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.gallery-section h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    color: #8e24aa; /* 💜 เปลี่ยนสีหัวข้อแกลเลอรี */
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* สไตล์กระดาษโพลารอยด์ */
+.polaroid {
+    background: white;
+    padding: 15px 15px 25px 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-radius: 2px;
+    transition: all 0.4s ease;
+    width: 260px;
+    cursor: pointer;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border: 1px solid #f0f0f0;
+}
+
+.polaroid-text {
+    font-family: 'Mitr', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* ลูกเล่นเอียงรูปภาพ */
+.paper-1 { transform: rotate(-4deg); }
+.paper-2 { transform: rotate(2deg); }
+.paper-3 { transform: rotate(-2deg); }
+
+/* เอฟเฟกต์ตอนแฟนเอาเมาส์มาชี้ที่รูปภาพ */
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.08);
+    /* 💜 เปลี่ยนเงาตอนชี้ให้เป็นสีม่วง */
+    box-shadow: 0 15px 35px rgba(142, 36, 170, 0.2);
+    z-index: 10;
+}
+
+/* --- ส่วนท้ายเว็บ --- */
+.love-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 1.1rem;
+    color: #ba68c8; /* 💜 ข้อความท้ายเว็บสีม่วงอ่อนหวาน */
+}
+
+/* --- แอนิเมชัน --- */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+/* หัวใจดึงดูดสายตาหลังเว็บ */
+.bg-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.4; /* ปรับให้ชัดขึ้นนิดนึงเพราะพื้นหลังสีม่วง */
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 1.5rem;
+}
+.heart:nth-child(1) { top: 10%; left: 10%; }
+.heart:nth-child(2) { top: 25%; right: 15%; }
+.heart:nth-child(3) { bottom: 30%; left: 15%; }
+.heart:nth-child(4) { bottom: 15%; right: 10%; }
